@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "skills": {
+    "ui-ux-pro-max": {
+      "source": "IAs-MCPs-Skills/UI-UX-Desing",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "27d6ff75402b0a2a0b2e5a19d857ba7c0b58e6a363a88fa066da94c665a52776"
+    }
+  }
+}
