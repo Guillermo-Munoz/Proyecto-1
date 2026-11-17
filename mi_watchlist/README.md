@@ -16,9 +16,9 @@ Proyecto del módulo de Desarrollo de Interfaces.
 
 ## Captura
 
-(docs/boceto.png)
+docs/boceto.png
 
-> Las capturas se guardan en `docs/capturas/`.
+![Boceto de la aplicación](docs/boceto.png)
 
 ## Cómo ejecutarla
 
