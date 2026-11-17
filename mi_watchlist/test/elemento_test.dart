@@ -52,6 +52,24 @@ void main() {
       expect(copia, sinNotas);
     });
 
+    test('la imagen se conserva al pasar por JSON', () {
+      final conImagen = completo.copyWith(
+        imagen: 'assets/imagenes/breaking_bad.jpg',
+      );
+      final copia = Elemento.fromJson(conImagen.toJson());
+
+      expect(copia.imagen, 'assets/imagenes/breaking_bad.jpg');
+      expect(copia, conImagen);
+    });
+
+    test('datos guardados sin la clave imagen se leen con imagen null', () {
+      final json = completo.toJson()..remove('imagen');
+      final copia = Elemento.fromJson(json);
+
+      expect(copia.imagen, isNull);
+      expect(copia, completo);
+    });
+
     test('los enum se guardan por su nombre', () {
       final json = completo.toJson();
 

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../modelos/elemento.dart';
+import 'portada_elemento.dart';
 import 'selector_estrellas.dart';
 
 /// Tarjeta que resume un [Elemento] dentro de la lista.
 ///
-/// Muestra un icono según el [Tipo], el título en negrita, el estado
+/// Muestra la portada (o un icono según el [Tipo]), el título en negrita, el estado
 /// legible y la valoración con [SelectorEstrellas]. Al pulsarla llama
 /// a [onTap]; qué hacer (abrir el detalle, etc.) lo decide quien la usa.
 class TarjetaElemento extends StatelessWidget {
@@ -43,7 +44,7 @@ class TarjetaElemento extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: ListTile(
         onTap: onTap,
-        leading: CircleAvatar(child: Icon(iconoPara(elemento.tipo))),
+        leading: PortadaElemento(elemento: elemento, ancho: 40, alto: 56),
         title: Text(
           elemento.titulo,
           style: const TextStyle(fontWeight: FontWeight.bold),

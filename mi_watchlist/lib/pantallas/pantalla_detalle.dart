@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../modelos/elemento.dart';
+import '../widgets/portada_elemento.dart';
 import '../widgets/selector_estrellas.dart';
-import '../widgets/tarjeta_elemento.dart';
 import 'pantalla_formulario.dart';
 
 /// Lo que [PantallaDetalle] devuelve a la lista al cerrarse.
@@ -134,9 +134,11 @@ class _PantallaDetalleState extends State<PantallaDetalle> {
       padding: const EdgeInsets.all(24),
       children: [
         Center(
-          child: CircleAvatar(
-            radius: 40,
-            child: Icon(TarjetaElemento.iconoPara(_elemento.tipo), size: 40),
+          child: PortadaElemento(
+            elemento: _elemento,
+            ancho: 160,
+            alto: 240,
+            radio: 12,
           ),
         ),
         const SizedBox(height: 16),
