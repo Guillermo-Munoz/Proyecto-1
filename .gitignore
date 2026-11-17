@@ -1,0 +1,6 @@
+Guillermo_Rodriguez_Muñoz.txt
+
+# Local tool configuration (AI assistants, editor user data)
+mi_watchlist/AppData/
+.atl/
+.claude/
