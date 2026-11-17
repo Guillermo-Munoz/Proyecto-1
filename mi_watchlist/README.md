@@ -18,7 +18,7 @@ Proyecto del módulo de Desarrollo de Interfaces.
 
 | Lista | Formulario | Detalle | Estadísticas |
 | --- | --- | --- | --- |
-| ![Lista](docs/capturas/lista.png) | ![Formulario](docs/capturas/formulario.png) | ![Detalle](docs/capturas/detalle.png) | ![Estadísticas](docs/capturas/estadisticas.png) |
+|(docs/boceto.png)|
 
 > Las capturas se guardan en `docs/capturas/`.
 
