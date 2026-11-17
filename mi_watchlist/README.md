@@ -14,11 +14,9 @@ Proyecto del módulo de Desarrollo de Interfaces.
 - **Estadísticas**: total, recuento por estado con barras, valoración media y tipo más frecuente.
 - **Tema propio** generado con `ColorScheme.fromSeed`.
 
-## Capturas
+## Captura
 
-| Lista | Formulario | Detalle | Estadísticas |
-| --- | --- | --- | --- |
-|(docs/boceto.png)|
+(docs/boceto.png)
 
 > Las capturas se guardan en `docs/capturas/`.
 
