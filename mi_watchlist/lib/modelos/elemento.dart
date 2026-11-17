@@ -55,6 +55,10 @@ class Elemento {
   /// Fecha en la que se dio de alta el elemento.
   final DateTime fechaAlta;
 
+  /// Ruta del asset con la portada (p. ej. `assets/imagenes/dune.jpg`).
+  /// Opcional: sin imagen, la tarjeta muestra el icono del [Tipo].
+  final String? imagen;
+
   const Elemento({
     required this.id,
     required this.titulo,
@@ -63,6 +67,7 @@ class Elemento {
     this.valoracion = 0,
     this.notas,
     required this.fechaAlta,
+    this.imagen,
   }) : assert(valoracion >= 0 && valoracion <= valoracionMaxima);
 
   /// Crea un elemento nuevo: genera el [id], asigna [fechaAlta] a ahora,
@@ -73,6 +78,7 @@ class Elemento {
     Estado estado = Estado.pendiente,
     int valoracion = 0,
     String? notas,
+    String? imagen,
   }) {
     final error = validarTitulo(titulo);
     if (error != null) throw ArgumentError.value(titulo, 'titulo', error);
@@ -88,6 +94,7 @@ class Elemento {
       valoracion: valoracion,
       notas: _limpiarNotas(notas),
       fechaAlta: ahora,
+      imagen: imagen,
     );
   }
 
@@ -122,6 +129,7 @@ class Elemento {
     String? notas,
     bool borrarNotas = false,
     DateTime? fechaAlta,
+    String? imagen,
   }) {
     return Elemento(
       id: id ?? this.id,
@@ -133,6 +141,7 @@ class Elemento {
           ? null
           : (notas != null ? _limpiarNotas(notas) : this.notas),
       fechaAlta: fechaAlta ?? this.fechaAlta,
+      imagen: imagen ?? this.imagen,
     );
   }
 
@@ -145,6 +154,7 @@ class Elemento {
     'valoracion': valoracion,
     'notas': notas, // puede ser null
     'fechaAlta': fechaAlta.toIso8601String(),
+    'imagen': imagen, // puede ser null
   };
 
   /// Crea un elemento a partir de un mapa obtenido con `jsonDecode`.
@@ -160,6 +170,8 @@ class Elemento {
       ),
       notas: json['notas'] as String?, // si falta la clave -> null
       fechaAlta: DateTime.parse(json['fechaAlta'] as String),
+      // Los datos guardados antes de existir este campo no tienen la clave.
+      imagen: json['imagen'] as String?,
     );
   }
 
@@ -173,15 +185,24 @@ class Elemento {
           other.estado == estado &&
           other.valoracion == valoracion &&
           other.notas == notas &&
-          other.fechaAlta == fechaAlta;
+          other.fechaAlta == fechaAlta &&
+          other.imagen == imagen;
 
   @override
-  int get hashCode =>
-      Object.hash(id, titulo, tipo, estado, valoracion, notas, fechaAlta);
+  int get hashCode => Object.hash(
+    id,
+    titulo,
+    tipo,
+    estado,
+    valoracion,
+    notas,
+    fechaAlta,
+    imagen,
+  );
 
   @override
   String toString() =>
       'Elemento(id: $id, titulo: $titulo, tipo: ${tipo.name}, '
       'estado: ${estado.name}, valoracion: $valoracion, notas: $notas, '
-      'fechaAlta: $fechaAlta)';
+      'fechaAlta: $fechaAlta, imagen: $imagen)';
 }
