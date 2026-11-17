@@ -16,8 +16,6 @@ Proyecto del módulo de Desarrollo de Interfaces.
 
 ## Captura
 
-docs/boceto.png
-
 ![Boceto de la aplicación](docs/boceto.png)
 
 ## Cómo ejecutarla
